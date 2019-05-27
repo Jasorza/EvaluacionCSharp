@@ -11,6 +11,7 @@ namespace EvaluacionCSharp
         int saldo;
         double banco;
         double ahorro;
+        double ahorro2;
         int opcion;
         string res;
 
@@ -30,6 +31,11 @@ namespace EvaluacionCSharp
         {
             get { return ahorro; }
             set { ahorro = value;}
+        }
+
+        public double Ahorro2{
+            get{ return ahorro2; }
+            set{ ahorro2 = value; }
         }
 
         public int Gasto
@@ -60,7 +66,7 @@ namespace EvaluacionCSharp
         {
             if (Inicial>0)
             {
-                Banco = Banco + Inicial;
+                Banco = Banco + Inicial + Ahorro2;
                 Inicial = 0;
             }
         }
@@ -74,7 +80,7 @@ namespace EvaluacionCSharp
                 Inicial = Inicial - Gasto;
                 Ahorro10 = Gasto * 0.10;
                 Inicial = Inicial - Ahorro10;
-                Banco = Banco + Ahorro10;
+                Ahorro2 = Ahorro2 + Ahorro10;
             }
 
             else
