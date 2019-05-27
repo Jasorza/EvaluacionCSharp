@@ -168,19 +168,29 @@ namespace EvaluacionCSharp
                             Menu();
                         }
                     }
-                    
-                    
-                    
                     break;
 
                 case (int)3:
-                    Depositar();
-                    NotificaTransaciones();
-                    Console.WriteLine("<--Presiona cualquier tecla para volver al Menú");
-                    res = Console.ReadLine();
-                    if (true)
+                    if (Inicial>0)
                     {
-                        Menu();
+                        Depositar();
+                        NotificaTransaciones();
+                        Console.WriteLine("<--Presiona cualquier tecla para volver al Menú");
+                        res = Console.ReadLine();
+                        if (true)
+                        {
+                            Menu();
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("No hay dinero en la billetera");
+                        Console.WriteLine("<--Presiona cualquier tecla para volver al Menú");
+                        res = Console.ReadLine();
+                        if (true)
+                        {
+                            Menu();
+                        }
                     }
                     break;
 
