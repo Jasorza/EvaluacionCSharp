@@ -73,20 +73,12 @@ namespace EvaluacionCSharp
 
         public void Gastar()
         {
-            if (Inicial>0) 
-            {
-                Console.WriteLine("Ingrese el valor de lo que va a Gastar: ");
-                Gasto = int.Parse(Console.ReadLine());
-                Inicial = Inicial - Gasto;
-                Ahorro10 = Gasto * 0.10;
-                Inicial = Inicial - Ahorro10;
-                Ahorro2 = Ahorro2 + Ahorro10;
-            }
-
-            else
-            {
-                Console.WriteLine("No hay dinero en la billetera");
-            }
+            Console.WriteLine("Ingrese el valor de lo que va a Gastar: ");
+            Gasto = int.Parse(Console.ReadLine());
+            Inicial = Inicial - Gasto;
+            Ahorro10 = Gasto * 0.10;
+            Inicial = Inicial - Ahorro10;
+            Ahorro2 = Ahorro2 + Ahorro10;
         }
 
         public void ImprimirDinero()
@@ -155,14 +147,30 @@ namespace EvaluacionCSharp
                     break;
 
                 case (int)2:
-                    Gastar();
-                    NotificaTransaciones();
-                    Console.WriteLine("<--Presiona cualquier tecla para volver al Menú");
-                    res = Console.ReadLine();
-                    if (true)
+                    if (Inicial>0)
                     {
-                        Menu();
+                        Gastar();
+                        NotificaTransaciones();
+                        Console.WriteLine("<--Presiona cualquier tecla para volver al Menú");
+                        res = Console.ReadLine();
+                        if (true)
+                        {
+                            Menu();
+                        }
                     }
+                    else
+                    {
+                        Console.WriteLine("No hay dinero en la billetera");
+                        Console.WriteLine("<--Presiona cualquier tecla para volver al Menú");
+                        res = Console.ReadLine();
+                        if (true)
+                        {
+                            Menu();
+                        }
+                    }
+                    
+                    
+                    
                     break;
 
                 case (int)3:
